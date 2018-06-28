@@ -1,11 +1,45 @@
-Si estás viendo en tu directorio de trabajo solo este documento junto con el README.md es que has ejecutado bien tus dos primeras sentencias en Git. La primera fue bajarse el repositorio y la segunda colocarse en esta entrega o commit.
+# primera lección
+Si estás viendo en tu directorio de trabajo solo este documento junto con el README.md y el LICENSE es que has ejecutado bien tus dos primeras sentencias en Git.  
+¡Felicidades!  
+La primera fue bajarse el repositorio y la segunda colocarse en esta entrega o commit. Entraré en más detalle y aprovecharé para explicar algo de teoría.
+Si quieres avanzar sin leer la teoría ve al último apartado llamado "Siguiente paso: ir al commit BB"
+
 ¿Que ha pasado?
 Conceptos básicos:
 ¿Qué es un commit o entrega?.
 ¿Qué es un historial?
-¿Qué es el Working copy, el Stagin area y el repositorio?
+¿Qué es el Working copy, el Staging area y el repositorio?
 
-## Siguiente paso: ir al commit BB
-$ git checkout id. <- para borrar todo lo que pudiste toquetear
-O 
-$ git reset --hard BB
+## Conceptos básicos
+### ¿Qué es un commit o entrega?
+Un commit podríamos decir que es una versión de tu trabajo. No tiene que ser una versión funcional al 100% podríamos verlo como una copia de seguridad de tu trabajo aún no terminado. Un ejemplo siempre ayuda. Imagina que estás escribiendo un texto. Aunque aún te queda mucho trabajo por delante estás contento con lo hecho hasta ahora y decides guardarlo en tu disco duro. Por eso guardas el fichero pulsando la opción "save" de tu editor de texto. Si temes que esa información se pueda borrar o quieres compartirla ya con otros colaboradores informas a git para que él guarde una copia de seguridad del trabajo hecho. Eso es un commit.  
+Los commits pueden ser privados o compartidos con otros. Todos los commits deben tener un título de no más de 50 caracteres. También pueden tener una explicación más larga pero no es necesario.  
+Los commits además tienen un nombre muy especial que es el importante para el ordenador. Lo llamamos el _id_. Y viene de la palabra "identificador". Son 40 caracteres que pueden ser cualquier número del 0 al 9 y cualquier letra de la "a" a la "f". Si para git el id es importante para nosotros también lo será.  
+Los commits tienen muchos detalles y propiedades que aprenderemos poco a poco. De momento con esto nos basta.
+
+### ¿Qué es un historial?
+Es toda la lista de commits que has ido haciendo a lo largo del tiempo. Cada commit conoce cual es la versión de la que procede (su inmediata anterior). Con esto podemos convertir un historial en toda una cadena de versiones.  
+Un historial puede representarse en un grafo.
+
+### ¿Qué es un grafo?
+Es una representación gráfica de nuestro historial. A git le importa poco el grafo pero para nosotros los humanos es muy útil. Cuando nuestro historial el grande puede ser difícil reconocer donde estamos. Un buen grafo rápidamente te orienta. Por esta razón este tutorial se apoyará mucho en los grafos.  
+Si observas un grafo como el de la figura ![figura1]() puedes ver que el historial de dos proyectos. Uno muy sencillo porque el grafo es sencillo y lineal. El segundo grafo está lleno de ramificaciones que se separan y unen. Es un grafo mucho más complejo en el que es fácil perderse.
+
+### ¿Qué es el _Working copy_?
+Es el directorio donde está todo el trabajo que git controla. Git controlará ese directorio, sus subdirectorios y todos los ficheros contenidos en ellos, incluso los ocultos.  
+Por "control" quiero decir que si hacemos algún cambio en ese directorio como incluir nuevos subdirectorios o nuevos ficheros o modificar sus nombres o su contenido git lo recordará convenientemente. Si por el contrario nos arrepentimos de una versión y queremos regresar a una anterior será allí donde git nos lo entregue.
+
+## Siguiente paso: ir al commit BB y ver los cambios.
+El siguiente paso va a ser precisamente observar cómo git puede cambiar nuestro _working copy_
+Si observamos nuestro actual directorio veremos algo así:
+```bash
+$ ls
+AA.txt		LICENSE		README.md
+```
+Pidamos un salto a la segunda versión:
+```
+$ git checkout HEAD     # para borrar todo lo que pudiste toquetear.
+$ git reset --hard BB   # para subir a la siguiente lección.
+$ ls                    # para el contenido del directorio y ver los cambios.
+AA.txt		BB.txt		LICENSE		README.md
+```
