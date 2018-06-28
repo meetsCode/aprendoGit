@@ -1,0 +1,11 @@
+Si estás viendo en tu directorio de trabajo solo este documento junto con el README.md es que has ejecutado bien tus dos primeras sentencias en Git. La primera fue bajarse el repositorio y la segunda colocarse en esta entrega o commit.
+¿Que ha pasado?
+Conceptos básicos:
+¿Qué es un commit o entrega?.
+¿Qué es un historial?
+¿Qué es el Working copy, el Stagin area y el repositorio?
+
+## Siguiente paso: ir al commit BB
+$ git checkout id. <- para borrar todo lo que pudiste toquetear
+O 
+$ git reset --hard BB
