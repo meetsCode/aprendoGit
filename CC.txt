@@ -1,0 +1,28 @@
+# Tercera lección
+En esta tercera lección intento afianzar y enlazar los dos conceptos anteriores.  
+Tenemos tenemos por una parte un directorio de trabajo (_Working copy_), otro donde guardo todas las versiones de mi trabajo (_Repository_) y un directorio entre medio que por ahora molesta más de lo que aporta (_Staging area_).  
+Por otra parte los _commits_ guardados en el _repository_ pueden verse como fotos congeladas de mi trabajo en el _Working copy_.  
+La relación entre ellos es que cuando navego por el repositorio modifico el _Working copy_. Eso es lo que hemos hecho con el comando `$ git reset --hard <nombreDeVersión>` . Así para leer cada nueva lección viajabas a un commit distinto con nuevos ficheros.  
+Esto ya es muy útil por sí solo. Ahora puedo borrar y modificar contenido a placer y sin miedo a perder información siempre que vaya haciendo commits periodicamente. Sin ser muy imaginativo la manera de recuperar parte de la información perdida sería viajar al pasado con el comando `git reset --hard` encontrar lo que luego borré, copiarlo en el portapapeles, volver al presente con el mismo comando e insertar lo que dejé en el portapapeles.  
+En realidad esto no es nada elegante pero funciona. La clave aquí está en saber navegar por el histórico de commits. Es decir, usar correctamente el comando `git reset` y naturalmente saber el nombre de mis commits.  
+En los siguientes apartados vamos a aprender precisamente a ver nuestros commits, conocer su nombre, su fecha de creación y autor y otros datos útiles. En definitiva vamos a conocer el histórico y su representación como grafo.  
+Mucho más adelante veremos formas más elegantes de recuperar mi trabajo que no sea copiar en el portapapeles.
+
+## Siguiente paso: ir al commit DD 
+El siguiente paso va nos vuelve a modificar nuestro _working copy_
+```bash
+$ git checkout HEAD     # para borrar todo lo que pudiste toquetear.
+$ git reset --hard DD   # para subir a la siguiente lección.
+$ ls                    # para el contenido del directorio y ver los cambios.
+AA.txt		BB.txt		CC.txt		DD.txt	LICENSE		README.md
+```
+
+
+
+
+
+
+
+
+
+

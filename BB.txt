@@ -1,0 +1,58 @@
+# Segunda lección
+Ya estamos en nuestra segunda lección. Si todo ha ido bien has saltado al siguiente commit, el llamado "BB commit"  
+
+Si quieres avanzar sin leer la teoría ve al último apartado llamado "Siguiente paso: ir al commit CC"
+
+¿Qué es el Working copy, el Staging area y el repositorio?
+
+## Conceptos básicos
+### Concepto de Staging area y repositorio
+Ademas del _working copy_ hay dos conceptos más que también pueden verse como directorios aunque realmente no lo son. Me refiero al _Staging area_ o _zona de preparados_ y el _repository_ o _repositorio_ 
+Ya aclaré que el Working copy es el directorio donde tengo todo mi trabajo, los ficheros que uso y modifico.
+Cuando yo creo una nueva versión se hace una instantánea, una foto de todo mi trabajo y se pone en el directorio _repository_. Esa es la razón de ser de ese tercer directorio. 
+Podría pensarse que hace una copia del trabajo que tengo en el _Working copy_ pero en realidad lo hace del trabajo que hayamos guardado en un "incómodo" tercer directorio llamado _Stagin area_.
+Así pues para hacer un nuevo commit debo:
+1. Crear una copia de mi _working copy_ en el _Staging area_
+2. Crear el commit propiamente dicho en el _repository_
+El incómodo paso 1 es necesario siempre aunque no tiene mucho sentido cuando tú programas para tí mismo pero se convierte en algo necesario cuando tienes que compartir el trabajo con otros. Lo veremos más adelante. De momento solo hay que tener claro que el trabajo fluye así:
+Working copy   -->   Staging area   -->   Repository
+ficheros           copia de ficheros      commit (:= ficheros
+modificados o      modificados y          guardados en una 
+nuevos             listos para guardar    versión )
+
+### ¿Cómo creo un commit?
+Lo veremos detenidamente más adelante. De momento diré que los comandos básicos son:
+1. `$ git add -A` Para copiar mi _working copy_ en el _Staging area_
+2. `$ git commit -m "Título del commit. Max 50 caracteres"` Para crear una nueva versión, entrega o commit.
+Lógicamente se deben ejecutar en el mismo directorio en cuestión.
+
+### En resumen
+Cuando creo que he hecho algún cambio interesante aviso a git para que haga una pequeña copia de seguridad de esos cambios.  
+Esto se hace con los comandos `$ git add -A` y luego `$ git commit -m "Título" para copiar mi _working copy_ en el _Staging area_ y luego en el _repository_.
+
+
+
+## Siguiente paso: ir al commit CC 
+El siguiente paso va nos vuelve a modificar nuestro _working copy_
+Si observamos nuestro actual directorio veremos algo así:
+```bash
+$ ls
+AA.txt		BB.txt		LICENSE		README.md
+```
+Pedimos un salto a la tercera versión con _checkout_:
+```bash
+$ git checkout HEAD     # para borrar todo lo que pudiste toquetear.
+$ git reset --hard CC   # para subir a la siguiente lección.
+$ ls                    # para el contenido del directorio y ver los cambios.
+AA.txt		BB.txt		LICENSE		README.md
+```
+
+
+
+
+
+
+
+
+
+
