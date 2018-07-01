@@ -1,0 +1,57 @@
+# Cuarta lección: Conociendo mi grafo.
+Vamos a aprender a representar un histórico en forma de grafo y conocer sus detalles así como las características de los commits que lo forman.  
+
+## Conceptos básicos
+### El commit por dentro.
+Sabemos que los commits son una foto que congela el estado de un directorio en un determinado momento. En realidad, para ahorrar espacio, git solo recuerda los cambios que hayamos hecho (a cada cambio lo llaman un _hunk_) y un enlace al commit anterior al que llaman "padre". Así cuando queremos que en nuestro _Working copy_ aparezca el trabajo del commit X lo que hace el sistema es ir al padre coger lo que haya y aplicarle los cambios que el tiene registrado para ese commit hijo.  
+### Del hijo al padre surge el grafo
+Si cada commit conoce a su padre podemos construir una cadena de hijo-padre. El dibujo de esta cadena lo llamo grafo. El grafo no es un concepto oficial de git pero a mi me ayuda mucho a localizarme cuando estoy trabajando.  
+### Representación de un grafo.
+Hay tres detalles que no he comentado. El primero es que un padre no conoce a sus hijos. El segundo es que un commit puede tener varios hijos y el tercero es que un hijo puede tener varios padres. ¿Lioso? si lo vemos en un grafo no es tanto.  
+Veamos unos grafos sencillos: ![gráfos básicos](grafosBasicos.jpeg)
+
+Esta imagen muestra tres grafos distintos.  
+En nuestros grafos vemos los commits como un circulo. Las fechas muestran quien es el padre y el hijo. La flecha siempre señala al commit padre. Esto es antiintuitivo pero expresa que es el hijo el que conoce al padre y no al revés. Digo que es antiintuitivo porque normalmente las flechas muestran el flujo de versiones. En estos tres ejemplos también vemos bifurcaciones, ramas y convergencias (_merge_ para Git) Lo vemos en detalle.
+#### El Grafo 1.
+El Grafo 1 es el más sencillo. Es raro ver un grafo tan lineal. Vemos que el commit D es el hijo de C , C es el hijo de B y por último el commit B es el hijo del commit A. De esto se deduce que el commit A es el más viejo, el primero que se hizo, la primera versión de nuestro trabajo. Luego le vino el commit B y luego el commit C. El commit D es el último y más actual. D es en el que estamos trabajando ahora. Se ve como yendo del más viejo al más joven (la última versión) vamos en dirección contraria a las flechas. Eso es lo que llamé antiintuitivo.
+#### El Grafo 2.
+Es muy parecido al Grafo 1 pero en el commit C observamos una bifurcación o ramificación. Estas bifurcaciones crean lo que llamamos __ramas__. El Grafo 2 tiene por lo tanto 2 ramas. El concepto de rama es algo distinto al de rama de un árbol porque en un grafo las ramas incluyen su tronco común. Es decir la rama 1 podríamos decir que va de D a A (D-A) y la rama 2 va de E a A (E-A). De esto se deduce que C,B y A están en dos ramas a la vez. Un commit puede ramificarse tantas veces como se desee. En estos tres ejemplos solo se ramifican una vez (:= forman dos ramas)
+#### El Grafo 3.
+Es una evolución del Grafo 2 y representa mucho mejor un caso real. Es más difícil de explicar que de ver pero por resumirlo podríamos decir que.
+* tiene una rama D-A
+* tiene una rama J-A
+* tiene una rama G-A
+* Las ramificaciones se producen en B y E
+* En I sucede un "merge" es decir dos ramas se funden para dejar una sola.
+
+El merge es una de las ideas geniales de Git. Consiste en que muchas personas pueden trabajar a la vez en un mismo proyecto, cada una en una rama distinta y luego se juntan para unificar su trabajo.  
+Podríamos decir que una persona fue haciendo cambios en el trabajo E y los guardó en el commit H y otra persona partiendo también de E hizo otros cambios que guardó en los commit F y G. Al final los cambios de uno y otro se juntaron en el commit I. Este es el secreto del éxito de Git. Las ramas y los merge permiten el trabajo colaborativo sin que nadie pierda información por el camino.  
+A diferencia de la ramificación el merge solo puede hacerse de dos en dos commits. Todo esto ya lo veremos más adelante.
+
+
+### En resumen
+* Los commits congelan un directorio pero solo recuerdan los cambios respecto a la versión anterior y un enlace a la versión anterior.
+* Los commits pueden dibujarse en grafos con flechas hacia el padre de cada commit. Esto hace un dibujo antiintuitivo.
+* Los commits pueden tener varios hijos dando lugar a las ramas.
+* Los commits pueden tener uno o dos padres. En el segundo caso se dice que es un merge y que es la unión de dos ramas.
+
+
+
+## Siguiente paso: ir al commit EE 
+En la siguiente lección veremos cómo se reconocen (identifican) los commits y las ramas.
+Para ver la siguiente lección ejecuta:
+El siguiente paso va
+```bash
+$ git checkout HEAD     # para borrar todo lo que pudiste toquetear.
+$ git reset --hard EE   # para subir a la siguiente lección.
+```
+
+
+
+
+
+
+
+
+
+

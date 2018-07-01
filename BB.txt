@@ -14,7 +14,7 @@ Podría pensarse que hace una copia del trabajo que tengo en el _Working copy_ p
 Así pues para hacer un nuevo commit debo:
 1. Crear una copia de mi _working copy_ en el _Staging area_
 2. Crear el commit propiamente dicho en el _repository_
-El incómodo paso 1 es necesario siempre aunque no tiene mucho sentido cuando tú programas para tí mismo pero se convierte en algo necesario cuando tienes que compartir el trabajo con otros. Lo veremos más adelante. De momento solo hay que tener claro que el trabajo fluye así:
+El incómodo paso 1 es necesario siempre aunque no tiene mucho sentido cuando tú programas para ti mismo pero se convierte en algo necesario cuando tienes que compartir el trabajo con otros. Lo veremos más adelante. De momento solo hay que tener claro que el trabajo fluye así:
 Working copy   -->   Staging area   -->   Repository
 ficheros           copia de ficheros      commit (:= ficheros
 modificados o      modificados y          guardados en una 
@@ -26,7 +26,7 @@ Lo veremos detenidamente más adelante. De momento diré que los comandos básic
 2. `$ git commit -m "Título del commit. Max 50 caracteres"` Para crear una nueva versión, entrega o commit.
 Lógicamente se deben ejecutar en el mismo directorio en cuestión.
 
-### En resumen
+## En resumen
 Cuando creo que he hecho algún cambio interesante aviso a git para que haga una pequeña copia de seguridad de esos cambios.  
 Esto se hace con los comandos `$ git add -A` y luego `$ git commit -m "Título" para copiar mi _working copy_ en el _Staging area_ y luego en el _repository_.
 
