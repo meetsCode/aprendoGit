@@ -30,10 +30,11 @@ Lógicamente se deben ejecutar en el mismo directorio en cuestión.
 Cuando creo que he hecho algún cambio interesante aviso a git para que haga una pequeña copia de seguridad de esos cambios.  
 Esto se hace con los comandos `$ git add -A` y luego `$ git commit -m "Título" para copiar mi _working copy_ en el _Staging area_ y luego en el _repository_.
 
+Debería llamarlo _"Backup temporal"_
 
 
 ## Siguiente paso: ir al commit CC 
-El siguiente paso va nos vuelve a modificar nuestro _working copy_
+El siguiente paso nos vuelve a modificar nuestro _working copy_
 Si observamos nuestro actual directorio veremos algo así:
 ```bash
 $ ls
